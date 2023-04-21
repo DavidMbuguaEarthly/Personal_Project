@@ -78,7 +78,7 @@ if(!isset($_SESSION['login_customer'])){
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Catalog <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
               <li> <a href="prereturncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
@@ -124,7 +124,7 @@ if(!isset($_SESSION['login_customer'])){
       <div class="form-area">
         <form role="form" action="bookingconfirm.php" method="POST">
         <br style="clear: both">
-          <h2 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Rent your dream car here </h2><br>
+          <h2 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Rent your preferred Equipment here </h2><br>
 
         <?php
         $car_id = $_GET["id"];
@@ -145,11 +145,11 @@ if(!isset($_SESSION['login_customer'])){
         ?>
 
           <!-- <div class="form-group"> -->
-              <h5> Car:&nbsp;  <?php echo($car_name);?></h5>
+              <h5> Equipment:&nbsp;  <?php echo($car_name);?></h5>
          <!-- </div> -->
          
           <!-- <div class="form-group"> -->
-            <h5> Vehicle Number:&nbsp; <?php echo($car_nameplate);?></h5>
+            <h5> Serial Number:&nbsp; <?php echo($car_nameplate);?></h5>
           <!-- </div>      -->
         <!-- <div class="form-group"> -->
         <?php $today = date("Y-m-d") ?>
@@ -160,9 +160,9 @@ if(!isset($_SESSION['login_customer'])){
           <input type="date" name="rent_end_date" min="<?php echo($today);?>" required="">
         <!-- </div>      -->
         
-        <h5> Choose your car type:  &nbsp;
-            <input onclick="reveal()" type="radio" name="radio" value="ac" ng-model="myVar"> AC &nbsp;
-            <input onclick="reveal()" type="radio" name="radio" value="non_ac" ng-model="myVar"> Non-AC
+        <h5> Choose your Equipment type:  &nbsp;
+            <input onclick="reveal()" type="radio" name="radio" value="ac" ng-model="myVar"> Electric &nbsp;
+            <input onclick="reveal()" type="radio" name="radio" value="non_ac" ng-model="myVar"> Non-Electric
                 
         
         <div ng-switch="myVar"> 
@@ -173,23 +173,28 @@ if(!isset($_SESSION['login_customer'])){
                      </div>
                     <div ng-switch-when="ac">
                     <!-- <div class="form-group"> -->
-                <h5>Fare: <?php echo("rwf" . $ac_price . "/km and rwf" . $ac_price_per_day . "/day");?><h5>    
+
+                <h5>Fare: <?php echo("rwf" . $ac_price . "/hr and rwf" . $ac_price_per_day . "/day");?><h5>    
+
                 <!-- </div>    -->
                      </div>
                      <div ng-switch-when="non_ac">
                      <!-- <div class="form-group"> -->
-                <h5>Fare: <?php echo("rwf" . $non_ac_price . "/km and rwf" . $non_ac_price_per_day . "/day");?><h5>    
+
+                <h5>Charges: <?php echo("rwf" . $non_ac_price . "/hr and rwf" . $non_ac_price_per_day . "/day");?><h5>    
+
+               
                 <!-- </div>   -->
                      </div>
         </div>
 
          <h5> Choose charge type:  &nbsp;
-            <input onclick="reveal()" type="radio" name="radio1" value="km"> per km(s) &nbsp;
+            <input onclick="reveal()" type="radio" name="radio1" value="hr"> per hr(s) &nbsp;
             <input onclick="reveal()" type="radio" name="radio1" value="days"> per day(s)
 
             <br><br>
                 <!-- <form class="form-group"> -->
-                Choose a driver: &nbsp;
+                Choose delivery mode: &nbsp;
                 <select name="driver_id_from_dropdown" ng-model="myVar1">
                         <?php
                         $sql2 = "SELECT * FROM driver d WHERE d.driver_availability = 'yes' AND d.client_username IN (SELECT cc.client_username FROM clientcars cc WHERE cc.car_id = '$car_id')";
@@ -210,7 +215,7 @@ if(!isset($_SESSION['login_customer'])){
                     <?php }} 
                     else{
                         ?>
-                    Sorry! No Drivers are currently available, try again later...
+                    Sorry! This mode is currently unavailable, try again later...
                         <?php
                     }
                     ?>
@@ -233,7 +238,7 @@ if(!isset($_SESSION['login_customer'])){
                 ?>
 
                 <div ng-switch-when="<?php echo($driver_id); ?>">
-                    <h5>Driver Name:&nbsp; <?php echo($driver_name); ?></h5>
+                    <h5> Name:&nbsp; <?php echo($driver_name); ?></h5>
                     <p>Gender:&nbsp; <?php echo($driver_gender); ?> </p>
                     <p>Contact:&nbsp; <?php echo($driver_phone); ?> </p>
                 </div>
@@ -257,7 +262,7 @@ if(!isset($_SESSION['login_customer'])){
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2023 Equipment Rental</h5>
                 </div>
             </div>
         </div>

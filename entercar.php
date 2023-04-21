@@ -122,11 +122,11 @@ include('session_client.php'); ?>
           </div>     
 
           <div class="form-group">
-            <input type="text" class="form-control" id="ac_price" name="ac_price" placeholder="AC Fare per km (in rupees)" required>
+            <input type="text" class="form-control" id="ac_price" name="ac_price" placeholder="AC Fare per hr (in rupees)" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="non_ac_price" name="non_ac_price" placeholder="Non-AC Fare per km (in rupees)" required>
+            <input type="text" class="form-control" id="non_ac_price" name="non_ac_price" placeholder="Non-AC Fare per hr (in rupees)" required>
           </div>
 
           <div class="form-group">
@@ -166,8 +166,8 @@ if (mysqli_num_rows($result) > 0) {
         <th></th>
         <th width="24%"> Name</th>
         <th width="15%"> Nameplate </th>
-        <th width="13%"> AC Fare (/km) </th>
-        <th width="17%"> Non-AC Fare (/km)</th>
+        <th width="13%"> AC Fare (/hr) </th>
+        <th width="17%"> Non-AC Fare (/hr)</th>
         <th width="13%"> AC Fare (/day)</th>
         <th width="17%"> Non-AC Fare (/day)</th>
         <th width="1%"> Availability </th>
@@ -209,7 +209,7 @@ if (mysqli_num_rows($result) > 0) {
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2023 Equipment Rental</h5>
                 </div>
             </div>
         </div>

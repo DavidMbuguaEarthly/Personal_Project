@@ -71,7 +71,7 @@ $conn = Connect();
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Catalog <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
               <li> <a href="returncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
@@ -157,7 +157,7 @@ function dateDiff($start, $end) {
             if($charge_type == "days"){
                     echo ($fare . "/day");
                 } else {
-                    echo ($fare . "/km");
+                    echo ($fare . "/hr");
                 }
             ?>
             </h5>
@@ -165,9 +165,9 @@ function dateDiff($start, $end) {
            <h5> Driver Name:&nbsp;  <?php echo($driver_name);?></h5>
 
            <h5> Driver Contact:&nbsp;  <?php echo($driver_phone);?></h5>
-          <?php if($charge_type == "km") { ?>
+          <?php if($charge_type == "hr") { ?>
           <div class="form-group">
-            <input type="text" class="form-control" id="distance_or_days" name="distance_or_days" placeholder="Enter the distance travelled (in km)" required="" autofocus>
+            <input type="text" class="form-control" id="distance_or_days" name="distance_or_days" placeholder="Enter the distance travelled (in hr)" required="" autofocus>
           </div>
           <?php }  else { ?>
             <h5> Number of Day(s):&nbsp;  <?php echo($no_of_days);?></h5>
@@ -188,7 +188,7 @@ function dateDiff($start, $end) {
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2023 Equipment Rental</h5>
                 </div>
             </div>
         </div>

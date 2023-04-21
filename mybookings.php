@@ -71,7 +71,7 @@ $conn = Connect();
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Catalog <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
               <li> <a href="prereturncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
@@ -135,7 +135,7 @@ $conn = Connect();
 <th width="15%">Rent Start Date</th>
 <th width="15%">Rent End Date</th>
 <th width="10%">Fare</th>
-<th width="15%">Distance (in kms)</th>
+<th width="15%">Distance (in hrs)</th>
 <th width="15%">Number of Days</th>
 <th width="15%">Total Amount</th>
 </tr>
@@ -151,7 +151,7 @@ $conn = Connect();
             if($row["charge_type"] == "days"){
                     echo ($row["fare"] . "/day");
                 } else {
-                    echo ($row["fare"] . "/km");
+                    echo ($row["fare"] . "/hr");
                 }
             ?></td>
 <td><?php  if($row["charge_type"] == "days"){
@@ -183,7 +183,7 @@ $conn = Connect();
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2023 Equipment Rental</h5>
                 </div>
             </div>
         </div>
