@@ -72,7 +72,7 @@ $conn = Connect();
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Catalog <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
               <li> <a href="prereturncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
@@ -201,11 +201,11 @@ else {
                 <br>
                 <h4> <strong>Vehicle Number:</strong> <?php echo $car_nameplate; ?></h4>
                 <br>
-                <h4> <strong>Fare:&nbsp;</strong>  ₹<?php 
+                <h4> <strong>Fare:&nbsp;</strong>  rwf<?php 
             if($charge_type == "days"){
                     echo ($fare . "/day");
                 } else {
-                    echo ($fare . "/km");
+                    echo ($fare . "/hr");
                 }
             ?></h4>
                 <br>
@@ -220,17 +220,17 @@ else {
                 <?php if($charge_type == "days"){?>
                     <h4> <strong>Number of days:</strong> <?php echo $distance_or_days; ?>day(s)</h4>
                 <?php } else { ?>
-                    <h4> <strong>Distance Travelled:</strong> <?php echo $distance_or_days; ?>km(s)</h4>
+                    <h4> <strong>Distance Travelled:</strong> <?php echo $distance_or_days; ?>hr(s)</h4>
                 <?php } ?>
                 <br>
                 <?php
                     if($extra_days > 0){
                         
                 ?>
-                <h4> <strong>Total Fine:</strong> <label class="text-danger"> ₹<?php echo $total_fine; ?>/- </label> for <?php echo $extra_days;?> extra days.</h4>
+                <h4> <strong>Total Fine:</strong> <label class="text-danger"> rwf<?php echo $total_fine; ?>/- </label> for <?php echo $extra_days;?> extra days.</h4>
                 <br>
                 <?php } ?>
-                <h4> <strong>Total Amount: </strong> ₹<?php echo $total_amount; ?>/-     </h4>
+                <h4> <strong>Total Amount: </strong> rwf<?php echo $total_amount; ?>/-     </h4>
                 <br>
             </div>
         </div>
@@ -245,7 +245,7 @@ else {
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2023 Equipment Rental</h5>
                 </div>
             </div>
         </div>

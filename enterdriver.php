@@ -204,7 +204,7 @@ if (mysqli_num_rows($result) > 0) {
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2023 Equipment Rental</h5>
                 </div>
             </div>
         </div>

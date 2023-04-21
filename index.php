@@ -8,7 +8,7 @@ $conn = Connect();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patna Car Rental</title>
+    <title>EQUIPMENT RENTAL</title>
     <link rel="shortcut icon" type="image/png" href="assets/img/P.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -29,7 +29,7 @@ $conn = Connect();
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                EQUIPMENT RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -48,8 +48,8 @@ $conn = Connect();
                     <ul class="nav navbar-nav navbar-right">
             <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="entercar.php">Add Car</a></li>
-              <li> <a href="enterdriver.php"> Add Driver</a></li>
+              <li> <a href="entercar.php">Add Equipment</a></li>
+              <li> <a href="enterdriver.php"> Add Delivery mode</a></li>
               <li> <a href="clientview.php">View</a></li>
 
             </ul>
@@ -75,7 +75,7 @@ $conn = Connect();
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Catalog <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
               <li> <a href="prereturncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
@@ -121,9 +121,9 @@ $conn = Connect();
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <h1 class="brand-heading" style="color: white">PATNA CAR RENTAL</h1>
+                            <h1 class="brand-heading" style="color: white">Equipment RENTAL</h1>
                             <p class="intro-text">
-                                Online car rental service
+                                Online Equipment rental service
                             </p>
                             <a href="#sec2" class="btn btn-circle page-scroll blink">
                                 <i class="fa fa-angle-double-down animated"></i>
@@ -136,7 +136,7 @@ $conn = Connect();
     </div>
 
     <div id="sec2" style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
-        <h3 style="text-align:center;">Currently Available Cars</h3>
+        <h3 style="text-align:center;">Currently Available Equipment</h3>
 <br>
         <section class="menu-content">
             <?php   
@@ -160,8 +160,8 @@ $conn = Connect();
 
             <img class="card-img-top" src="<?php echo $car_img; ?>" alt="Card image cap">
             <h5> <?php echo $car_name; ?> </h5>
-            <h6> AC Fare: <?php echo ("₹" . $ac_price . "/km & ₹" . $ac_price_per_day . "/day"); ?></h6>
-            <h6> Non-AC Fare: <?php echo ("₹" . $non_ac_price . "/km & ₹" . $non_ac_price_per_day . "/day"); ?></h6>
+            <h6> Electric charge: <?php echo ("rwf" . $ac_price . "/hr & rwf" . $ac_price_per_day . "/day"); ?></h6>
+            <h6> Non-electric charge: <?php echo ("rwf" . $non_ac_price . "/hr & rwf" . $non_ac_price_per_day . "/day"); ?></h6>
 
             
             </div> 
@@ -169,7 +169,7 @@ $conn = Connect();
             <?php }}
             else {
                 ?>
-<h1> No cars available :( </h1>
+<h1> No Equipment available :( </h1>
                 <?php
             }
             ?>                                   
@@ -200,11 +200,11 @@ $conn = Connect();
             </div>
             <div class="w3-col m8 w3-panel">
                 <div class="w3-large w3-margin-bottom">
-                    <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Patna, India<br>
-                    <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +91 8132044768<br>
-                    <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: aminnikhil073@gmail.com<br>
+                    <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Rwanda<br>
+                    <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +250 722350123<br>
+                    <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: d.mbugua@alustudent.com<br>
                 </div>
-                <p>New to Patna ? Drop Your Details and Leave it on us We'll Revert</p>
+                <p>New to Equipment Rental? Drop Your Details and Leave it on us We'll Revert</p>
                 <form action="action_page.php" method="POST">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
@@ -227,7 +227,7 @@ $conn = Connect();
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2023 Equipment Rental</h5>
                 </div>
                 <div class="col-sm-6 social-icons">
                     <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>

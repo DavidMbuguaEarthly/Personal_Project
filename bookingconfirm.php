@@ -51,11 +51,11 @@ if(!isset($_SESSION['login_customer'])){
     if (mysqli_num_rows($result0) > 0) {
         while($row0 = mysqli_fetch_assoc($result0)) {
 
-            if($type == "ac" && $charge_type == "km"){
+            if($type == "ac" && $charge_type == "hr"){
                 $fare = $row0["ac_price"];
             } else if ($type == "ac" && $charge_type == "days"){
                 $fare = $row0["ac_price_per_day"];
-            } else if ($type == "non_ac" && $charge_type == "km"){
+            } else if ($type == "non_ac" && $charge_type == "hr"){
                 $fare = $row0["non_ac_price"];
             } else if ($type == "non_ac" && $charge_type == "days"){
                 $fare = $row0["non_ac_price_per_day"];
@@ -152,7 +152,7 @@ if(!isset($_SESSION['login_customer'])){
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Catalog <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
               <li> <a href="prereturncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
@@ -226,10 +226,10 @@ if(!isset($_SESSION['login_customer'])){
                 <?php     
                 if($charge_type == "days"){
                 ?>
-                     <h4> <strong>Fare:</strong> ₹<?php echo $fare; ?>/day</h4>
+                     <h4> <strong>Fare:</strong> rwf<?php echo $fare; ?>/day</h4>
                 <?php } else {
                     ?>
-                    <h4> <strong>Fare:</strong> ₹<?php echo $fare; ?>/km</h4>
+                    <h4> <strong>Fare:</strong> rwf<?php echo $fare; ?>/hr</h4>
 
                 <?php } ?>
 
@@ -314,7 +314,7 @@ if(!isset($_SESSION['login_customer'])){
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Catalog <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
               <li> <a href="prereturncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
@@ -365,7 +365,7 @@ if(!isset($_SESSION['login_customer'])){
         <hr>
         <div class="row">
             <div class="col-sm-6">
-                <h5>© 2018 Patna Car Rental</h5>
+                <h5>© 2023 Equipment Rental</h5>
             </div>
         </div>
     </div>
