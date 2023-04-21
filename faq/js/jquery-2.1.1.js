@@ -2378,7 +2378,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 						}
 					}
 
-					// Discard index placeholder values to get only actual matches
+					// Disequipmentd index placeholder values to get only actual matches
 					setMatched = condense( setMatched );
 				}
 
@@ -3672,7 +3672,7 @@ Data.prototype = {
 			this.cache[ owner[ this.expando ] ] || {}
 		);
 	},
-	discard: function( owner ) {
+	disequipmentd: function( owner ) {
 		if ( owner[ this.expando ] ) {
 			delete this.cache[ owner[ this.expando ] ];
 		}
@@ -3693,7 +3693,7 @@ var data_user = new Data();
 	3. Use the same single mechanism to support "private" and "user" data.
 	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
 	5. Avoid exposing implementation details on user objects (eg. expando properties)
-	6. Provide a clear path for implementation upgrade to WeakMap in 2014
+	6. Provide a clear path for implementation upgrade to Weahrap in 2014
 */
 var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
 	rmultiDash = /([A-Z])/g;
@@ -4089,7 +4089,7 @@ jQuery.event = {
 		}
 		if ( !(eventHandle = elemData.handle) ) {
 			eventHandle = elemData.handle = function( e ) {
-				// Discard the second event of a jQuery.event.trigger() and
+				// Disequipmentd the second event of a jQuery.event.trigger() and
 				// when an event is called after a page has unloaded
 				return typeof jQuery !== strundefined && jQuery.event.triggered !== e.type ?
 					jQuery.event.dispatch.apply( elem, arguments ) : undefined;
@@ -5166,12 +5166,12 @@ jQuery.extend({
 						}
 					}
 					if ( data_priv.cache[ key ] ) {
-						// Discard any remaining `private` data
+						// Disequipmentd any remaining `private` data
 						delete data_priv.cache[ key ];
 					}
 				}
 			}
-			// Discard any remaining `user` data
+			// Disequipmentd any remaining `user` data
 			delete data_user.cache[ elem[ data_user.expando ] ];
 		}
 	}

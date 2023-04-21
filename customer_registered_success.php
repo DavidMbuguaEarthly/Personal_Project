@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title> customer Signup | Patna Car Rental </title>
+    <title> customer Signup | PATNA equipment Rental </title>
   </head>
   <link rel="shortcut icon" type="image/png" href="assets/img/P.png.png">
   <link rel="stylesheet" type = "text/css" href ="assets/css/manager_registered_success.css">
@@ -44,7 +44,7 @@
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                   PATNA equipment RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -61,9 +61,9 @@
                     </li>
                     <li>
                     <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="entercar.php">Add Car</a></li>
+              <li> <a href="enterequipment.php">Add equipment</a></li>
               <li> <a href="enterdriver.php"> Add Driver</a></li>
               <li> <a href="clientview.php">View</a></li>
 
@@ -90,9 +90,9 @@
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="equipmentet"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="prereturncar.php">Return Now</a></li>
+              <li> <a href="prereturnequipment.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
             </ul>
             </li>
@@ -169,7 +169,7 @@ $conn->close();
         <hr>
         <div class="row">
             <div class="col-sm-6">
-                <h5>© 2018 Patna Car Rental</h5>
+                <h5>© 2018 PATNA equipment Rental</h5>
             </div>
         </div>
     </div>

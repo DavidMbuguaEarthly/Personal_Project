@@ -10,7 +10,7 @@ if(isset($_SESSION['login_client'])){
     <html>
 
     <head>
-        <title> Client Login | Car Rental </title>
+        <title> Client Login | equipment Rental </title>
         <link rel="shortcut icon" type="image/png" href="assets/img/P.png.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -29,7 +29,7 @@ if(isset($_SESSION['login_client'])){
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                   PATNA equipment RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -46,9 +46,9 @@ if(isset($_SESSION['login_client'])){
                         </li>
                         <li>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
+                                <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
                                     <ul class="dropdown-menu">
-                                        <li> <a href="entercar.php">Add Car</a></li>
+                                        <li> <a href="enterequipment.php">Add equipment</a></li>
                                         <li> <a href="enterdriver.php"> Add Driver</a></li>
                                         <li> <a href="clientview.php">View</a></li>
 
@@ -112,7 +112,7 @@ if(isset($_SESSION['login_client'])){
     </nav>
         <div class="container">
             <div class="jumbotron">
-                <h1>Welcome to Patna Car Rental </span>
+                <h1>Welcome to PATNA equipment Rental </span>
                 </h1>
                 <br>
                 <p>Kindly LOGIN to continue.</p>
@@ -174,7 +174,7 @@ if(isset($_SESSION['login_client'])){
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2018 PATNA equipment Rental</h5>
                 </div>
             </div>
         </div>

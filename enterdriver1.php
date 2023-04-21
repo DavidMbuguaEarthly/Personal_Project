@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title> customer Signup | Patna Car Rental </title>
+    <title> customer Signup | PATNA equipment Rental </title>
   </head>
   <?php session_start(); ?>
   <link rel="shortcut icon" type="image/png" href="assets/img/P.png.png">
@@ -23,7 +23,7 @@
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                   PATNA equipment RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -40,9 +40,9 @@
                     </li>
                     <li>
                     <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="entercar.php">Add Car</a></li>
+              <li> <a href="enterequipment.php">Add equipment</a></li>
               <li> <a href="enterdriver.php"> Add Driver</a></li>
               <li> <a href="clientview.php">View</a></li>
 
@@ -124,9 +124,9 @@ $success = $conn->query($query);
 if (!$success){ ?>
     <div class="container">
 	<div class="jumbotron" style="text-align: center;">
-        Car with the same vehicle number already exists!
+        equipment with the same vehicle number already exists!
         <br><br>
-        <a href="entercar.php" class="btn btn-default"> Go Back </a>
+        <a href="enterequipment.php" class="btn btn-default"> Go Back </a>
 </div>
 <?php	
 }
@@ -144,7 +144,7 @@ $conn->close();
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2018 PATNA equipment Rental</h5>
                 </div>
             </div>
         </div>

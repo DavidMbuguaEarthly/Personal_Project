@@ -25,7 +25,7 @@ $conn = Connect();
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                   PATNA equipment RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -42,9 +42,9 @@ $conn = Connect();
                     </li>
                     <li>
                     <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="entercar.php">Add Car</a></li>
+              <li> <a href="enterequipment.php">Add equipment</a></li>
               <li> <a href="enterdriver.php"> Add Driver</a></li>
               <li> <a href="clientview.php">View</a></li>
 
@@ -71,9 +71,9 @@ $conn = Connect();
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="equipmentet"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="prereturncar.php">Return Now</a></li>
+              <li> <a href="prereturnequipment.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
             </ul>
             </li>
@@ -114,15 +114,15 @@ $conn = Connect();
  
 <?php $login_customer = $_SESSION['login_customer']; 
 
-    $sql1 = "SELECT c.car_name, rc.rent_start_date, rc.rent_end_date, rc.fare, rc.charge_type, rc.id FROM rentedcars rc, cars c
-    WHERE rc.customer_username='$login_customer' AND c.car_id=rc.car_id AND rc.return_status='NR'";
+    $sql1 = "SELECT c.equipment_name, rc.rent_start_date, rc.rent_end_date, rc.fare, rc.charge_type, rc.id FROM rentedequipment rc, equipment c
+    WHERE rc.customer_username='$login_customer' AND c.equipment_id=rc.equipment_id AND rc.return_status='NR'";
     $result1 = $conn->query($sql1);
 
     if (mysqli_num_rows($result1) > 0) {
 ?>
 <div class="container">
       <div class="jumbotron">
-        <h1>Return your cars here</h1>
+        <h1>Return your equipment here</h1>
         <p> Hope you enjoyed our service </p>
       </div>
     </div>
@@ -131,7 +131,7 @@ $conn = Connect();
 <table class="table table-striped">
   <thead class="thead-dark">
 <tr>
-<th width="30%">Car</th>
+<th width="30%">equipment</th>
 <th width="20%">Rent Start Date</th>
 <th width="20%">Rent End Date</th>
 <th width="20%">Fare</th>
@@ -142,19 +142,19 @@ $conn = Connect();
         while($row = mysqli_fetch_assoc($result1)) {
 ?>
 <tr>
-<td><?php echo $row["car_name"]; ?></td>
+<td><?php echo $row["equipment_name"]; ?></td>
 <td><?php echo $row["rent_start_date"] ?></td>
 <td><?php echo $row["rent_end_date"]; ?></td>
 <td>&#8377;<?php 
     if($row["charge_type"] == "days"){
         echo ($row["fare"] . "/day");
     } else {
-        echo ($row["fare"] . "/km");
+        echo ($row["fare"] . "/hr");
     }
  
 
 ?></td>
-<td><a href="returncar.php?id=<?php echo $row["id"];?>"> Return </a></td>
+<td><a href="returnequipment.php?id=<?php echo $row["id"];?>"> Return </a></td>
 </tr>
 <?php        } ?>
                 </table>
@@ -163,7 +163,7 @@ $conn = Connect();
             ?>
             <div class="container">
       <div class="jumbotron">
-        <h1>No cars to return.</h1>
+        <h1>No equipment to return.</h1>
         <p> Hope you enjoyed our service </p>
       </div>
     </div>
@@ -177,7 +177,7 @@ $conn = Connect();
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2018 PATNA equipment Rental</h5>
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@ include('session_client.php'); ?>
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                   PATNA equipment RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -41,9 +41,9 @@ include('session_client.php'); ?>
                     </li>
                     <li>
                     <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="entercar.php">Add Car</a></li>
+              <li> <a href="enterequipment.php">Add equipment</a></li>
               <li> <a href="enterdriver.php"> Add Driver</a></li>
               <li> <a href="clientview.php">View</a></li>
 
@@ -109,38 +109,38 @@ include('session_client.php'); ?>
     <div class="container" style="margin-top: 65px;" >
     <div class="col-md-7" style="float: none; margin: 0 auto;">
       <div class="form-area">
-        <form role="form" action="entercar1.php" enctype="multipart/form-data" method="POST">
+        <form role="form" action="enterequipment1.php" enctype="multipart/form-data" method="POST">
         <br style="clear: both">
-          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Want to rent your car? Give us your car details. </h3>
+          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Want to rent your equipment? Give us your equipment details. </h3>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="car_name" name="car_name" placeholder="Car Name " required autofocus="">
+            <input type="text" class="form-control" id="equipment_name" name="equipment_name" placeholder="equipment Name " required autofocus="">
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="car_nameplate" name="car_nameplate" placeholder="Vehicle Number (Name Plate Number)" required>
+            <input type="text" class="form-control" id="equipment_nameplate" name="equipment_nameplate" placeholder="Vehicle Number (Name Plate Number)" required>
           </div>     
 
           <div class="form-group">
-            <input type="text" class="form-control" id="ac_price" name="ac_price" placeholder="AC Fare per km (in rupees)" required>
+            <input type="text" class="form-control" id="ac_price" name="ac_price" placeholder="Electric per hr (in rupees)" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="non_ac_price" name="non_ac_price" placeholder="Non-AC Fare per km (in rupees)" required>
+            <input type="text" class="form-control" id="non_ac_price" name="non_ac_price" placeholder="Non-Electric per hr (in rupees)" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="ac_price_per_day" name="ac_price_per_day" placeholder="AC Fare per day (in rupees)" required>
+            <input type="text" class="form-control" id="ac_price_per_day" name="ac_price_per_day" placeholder="Electric per day (in rupees)" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="non_ac_price_per_day" name="non_ac_price_per_day" placeholder="Non-AC Fare per day (in rupees)" required>
+            <input type="text" class="form-control" id="non_ac_price_per_day" name="non_ac_price_per_day" placeholder="Non-Electric per day (in rupees)" required>
           </div>
 
           <div class="form-group">
             <input name="uploadedimage" type="file">
           </div>
-           <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right"> Add car</button>    
+           <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right"> Add equipment</button>    
         </form>
       </div>
     </div>
@@ -150,11 +150,11 @@ include('session_client.php'); ?>
     <div class="form-area" style="padding: 0px 100px 100px 100px;">
         <form action="" method="POST">
         <br style="clear: both">
-          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> My Cars </h3>
+          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> My equipment </h3>
 <?php
 // Storing Session
 $user_check=$_SESSION['login_client'];
-$sql = "SELECT * FROM cars WHERE car_id IN (SELECT car_id FROM clientcars WHERE client_username='$user_check');";
+$sql = "SELECT * FROM equipment WHERE equipment_id IN (SELECT equipment_id FROM clientequipment WHERE client_username='$user_check');";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -166,10 +166,10 @@ if (mysqli_num_rows($result) > 0) {
         <th></th>
         <th width="24%"> Name</th>
         <th width="15%"> Nameplate </th>
-        <th width="13%"> AC Fare (/km) </th>
-        <th width="17%"> Non-AC Fare (/km)</th>
-        <th width="13%"> AC Fare (/day)</th>
-        <th width="17%"> Non-AC Fare (/day)</th>
+        <th width="13%"> Electric (/hr) </th>
+        <th width="17%"> Non-Electric (/hr)</th>
+        <th width="13%"> Electric (/day)</th>
+        <th width="17%"> Non-Electric (/day)</th>
         <th width="1%"> Availability </th>
       </tr>
     </thead>
@@ -182,13 +182,13 @@ if (mysqli_num_rows($result) > 0) {
   <tbody>
     <tr>
       <td> <span class="glyphicon glyphicon-menu-right"></span> </td>
-      <td><?php echo $row["car_name"]; ?></td>
-      <td><?php echo $row["car_nameplate"]; ?></td>
+      <td><?php echo $row["equipment_name"]; ?></td>
+      <td><?php echo $row["equipment_nameplate"]; ?></td>
       <td><?php echo $row["ac_price"]; ?></td>
       <td><?php echo $row["non_ac_price"]; ?></td>
       <td><?php echo $row["ac_price_per_day"]; ?></td>
       <td><?php echo $row["non_ac_price_per_day"]; ?></td>
-      <td><?php echo $row["car_availability"]; ?></td>
+      <td><?php echo $row["equipment_availability"]; ?></td>
       
     </tr>
   </tbody>
@@ -197,7 +197,7 @@ if (mysqli_num_rows($result) > 0) {
   </div>
     <br>
   <?php } else { ?>
-  <h4><center>0 Cars available</center> </h4>
+  <h4><center>0 equipment available</center> </h4>
   <?php } ?>
         </form>
 </div>        
@@ -209,7 +209,7 @@ if (mysqli_num_rows($result) > 0) {
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 Patna Car Rental</h5>
+                    <h5>© 2018 PATNA equipment Rental</h5>
                 </div>
             </div>
         </div>

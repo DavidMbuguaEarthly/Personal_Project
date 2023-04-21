@@ -125,12 +125,12 @@ function $RouteProvider() {
    *
    *    Object properties:
    *
-   *    - `controller` – `{(string|Function)=}` – Controller fn that should be associated with
+   *    - `controller` ï¿½ `{(string|Function)=}` ï¿½ Controller fn that should be associated with
    *      newly created scope or the name of a {@link angular.Module#controller registered
    *      controller} if passed as a string.
-   *    - `controllerAs` – `{string=}` – An identifier name for a reference to the controller.
+   *    - `controllerAs` ï¿½ `{string=}` ï¿½ An identifier name for a reference to the controller.
    *      If present, the controller will be published to scope under the `controllerAs` name.
-   *    - `template` – `{(string|Function)=}` – html template as a string or a function that
+   *    - `template` ï¿½ `{(string|Function)=}` ï¿½ html template as a string or a function that
    *      returns an html template as a string which should be used by {@link
    *      ngRoute.directive:ngView ngView} or {@link ng.directive:ngInclude ngInclude} directives.
    *      This property takes precedence over `templateUrl`.
@@ -142,7 +142,7 @@ function $RouteProvider() {
    *
    *      One of `template` or `templateUrl` is required.
    *
-   *    - `templateUrl` – `{(string|Function)=}` – path or function that returns a path to an html
+   *    - `templateUrl` ï¿½ `{(string|Function)=}` ï¿½ path or function that returns a path to an html
    *      template that should be used by {@link ngRoute.directive:ngView ngView}.
    *
    *      If `templateUrl` is a function, it will be called with the following parameters:
@@ -171,7 +171,7 @@ function $RouteProvider() {
    *      </div>
    *      The map object is:
    *
-   *      - `key` – `{string}`: a name of a dependency to be injected into the controller.
+   *      - `key` ï¿½ `{string}`: a name of a dependency to be injected into the controller.
    *      - `factory` - `{string|Function}`: If `string` then it is an alias for a service.
    *        Otherwise if function, then it is {@link auto.$injector#invoke injected}
    *        and the return value is treated as the dependency. If the result is a promise, it is
@@ -182,7 +182,7 @@ function $RouteProvider() {
    *    - `resolveAs` - `{string=}` - The name under which the `resolve` map will be available on
    *      the scope of the route. If omitted, defaults to `$resolve`.
    *
-   *    - `redirectTo` – `{(string|Function)=}` – value to update
+   *    - `redirectTo` ï¿½ `{(string|Function)=}` ï¿½ value to update
    *      {@link ng.$location $location} path with and trigger route redirection.
    *
    *      If `redirectTo` is a function, it will be called with the following parameters:
@@ -203,7 +203,7 @@ function $RouteProvider() {
    *      returns `undefined`. In this case the route transition occurs as though there was no
    *      redirection.
    *
-   *    - `resolveRedirectTo` – `{Function=}` – a function that will (eventually) return the value
+   *    - `resolveRedirectTo` ï¿½ `{Function=}` ï¿½ a function that will (eventually) return the value
    *      to update {@link ng.$location $location} URL with and trigger route redirection. In
    *      contrast to `redirectTo`, dependencies can be injected into `resolveRedirectTo` and the
    *      return value can be either a string or a promise that will be resolved to a string.
@@ -436,7 +436,7 @@ function $RouteProvider() {
      *       <a href="Book/Moby/ch/1">Moby: Ch1</a> |
      *       <a href="Book/Gatsby">Gatsby</a> |
      *       <a href="Book/Gatsby/ch/4?key=value">Gatsby: Ch4</a> |
-     *       <a href="Book/Scarlet">Scarlet Letter</a><br/>
+     *       <a href="Book/Sequipmentlet">Sequipmentlet Letter</a><br/>
      *
      *       <div ng-view></div>
      *
@@ -513,11 +513,11 @@ function $RouteProvider() {
      *       expect(content).toMatch(/Book Id: Moby/);
      *       expect(content).toMatch(/Chapter Id: 1/);
      *
-     *       element(by.partialLinkText('Scarlet')).click();
+     *       element(by.partialLinkText('Sequipmentlet')).click();
      *
      *       content = element(by.css('[ng-view]')).getText();
      *       expect(content).toMatch(/controller: BookController/);
-     *       expect(content).toMatch(/Book Id: Scarlet/);
+     *       expect(content).toMatch(/Book Id: Sequipmentlet/);
      *     });
      *   </file>
      * </example>
@@ -989,7 +989,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           <a href="Book/Moby/ch/1">Moby: Ch1</a> |
           <a href="Book/Gatsby">Gatsby</a> |
           <a href="Book/Gatsby/ch/4?key=value">Gatsby: Ch4</a> |
-          <a href="Book/Scarlet">Scarlet Letter</a><br/>
+          <a href="Book/Sequipmentlet">Sequipmentlet Letter</a><br/>
 
           <div class="view-animate-container">
             <div ng-view class="view-animate"></div>
@@ -1101,11 +1101,11 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           expect(content).toMatch(/Book Id: Moby/);
           expect(content).toMatch(/Chapter Id: 1/);
 
-          element(by.partialLinkText('Scarlet')).click();
+          element(by.partialLinkText('Sequipmentlet')).click();
 
           content = element(by.css('[ng-view]')).getText();
           expect(content).toMatch(/controller: BookCtrl/);
-          expect(content).toMatch(/Book Id: Scarlet/);
+          expect(content).toMatch(/Book Id: Sequipmentlet/);
         });
       </file>
     </example>

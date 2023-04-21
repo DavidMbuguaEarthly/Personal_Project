@@ -100,11 +100,11 @@
     };
 
 
-    /* Carousel
+    /* equipmentousel
      * ------------------------------------------------------ */
-    var ssOwlCarousel = function() {
+    var ssOwlequipmentousel = function() {
 
-        $(".owl-carousel").owlCarousel({
+        $(".owl-equipmentousel").owlequipmentousel({
             nav: false,
             loop: true,
             margin: 50,
@@ -407,7 +407,7 @@
         ssMasonryFolio();
         ssLightGallery();
         ssFlexSlider();
-        ssOwlCarousel();
+        ssOwlequipmentousel();
         ssMenuOnScrolldown();
         ssOffCanvas();
         ssSmoothScroll();
