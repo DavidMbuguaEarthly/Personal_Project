@@ -173,12 +173,12 @@ if(!isset($_SESSION['login_customer'])){
                      </div>
                     <div ng-switch-when="ac">
                     <!-- <div class="form-group"> -->
-                <h5>Fare: <?php echo("₹" . $ac_price . "/km and ₹" . $ac_price_per_day . "/day");?><h5>    
+                <h5>Fare: <?php echo("rwf" . $ac_price . "/km and rwf" . $ac_price_per_day . "/day");?><h5>    
                 <!-- </div>    -->
                      </div>
                      <div ng-switch-when="non_ac">
                      <!-- <div class="form-group"> -->
-                <h5>Fare: <?php echo("₹" . $non_ac_price . "/km and ₹" . $non_ac_price_per_day . "/day");?><h5>    
+                <h5>Fare: <?php echo("rwf" . $non_ac_price . "/km and rwf" . $non_ac_price_per_day . "/day");?><h5>    
                 <!-- </div>   -->
                      </div>
         </div>
@@ -247,7 +247,7 @@ if(!isset($_SESSION['login_customer'])){
         
       </div>
       <div class="col-md-12" style="float: none; margin: 0 auto; text-align: center;">
-            <h6><strong>Kindly Note:</strong> You will be charged <span class="text-danger">₹200/-</span> for each day after the due date.</h6>
+            <h6><strong>Kindly Note:</strong> You will be charged <span class="text-danger">rwf200/-</span> for each day after the due date.</h6>
         </div>
     </div>
 

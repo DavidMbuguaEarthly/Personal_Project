@@ -201,7 +201,7 @@ else {
                 <br>
                 <h4> <strong>Vehicle Number:</strong> <?php echo $car_nameplate; ?></h4>
                 <br>
-                <h4> <strong>Fare:&nbsp;</strong>  ₹<?php 
+                <h4> <strong>Fare:&nbsp;</strong>  rwf<?php 
             if($charge_type == "days"){
                     echo ($fare . "/day");
                 } else {
@@ -227,10 +227,10 @@ else {
                     if($extra_days > 0){
                         
                 ?>
-                <h4> <strong>Total Fine:</strong> <label class="text-danger"> ₹<?php echo $total_fine; ?>/- </label> for <?php echo $extra_days;?> extra days.</h4>
+                <h4> <strong>Total Fine:</strong> <label class="text-danger"> rwf<?php echo $total_fine; ?>/- </label> for <?php echo $extra_days;?> extra days.</h4>
                 <br>
                 <?php } ?>
-                <h4> <strong>Total Amount: </strong> ₹<?php echo $total_amount; ?>/-     </h4>
+                <h4> <strong>Total Amount: </strong> rwf<?php echo $total_amount; ?>/-     </h4>
                 <br>
             </div>
         </div>
