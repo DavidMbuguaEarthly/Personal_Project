@@ -106,7 +106,7 @@ if(!isset($_SESSION['login_customer'])){
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                   Equipment Rental </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -125,8 +125,8 @@ if(!isset($_SESSION['login_customer'])){
                     <ul class="nav navbar-nav navbar-right">
             <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="entercar.php">Add Car</a></li>
-              <li> <a href="enterdriver.php"> Add Driver</a></li>
+              <li> <a href="entercar.php">Add Equipment</a></li>
+              <li> <a href="enterdriver.php"> Add Delivery Mode</a></li>
               <li> <a href="clientview.php">View</a></li>
 
             </ul>
@@ -199,7 +199,7 @@ if(!isset($_SESSION['login_customer'])){
     </div>
     <br>
 
-    <h2 class="text-center"> Thank you for visiting Patna Car Rental! We wish you have a safe ride. </h2>
+    <h2 class="text-center"> Thank you for visiting Equipment Rental! </h2>
 
  
 
@@ -218,19 +218,19 @@ if(!isset($_SESSION['login_customer'])){
                 <br>
             </div>
             <div class="col-md-10" style="float: none; margin: 0 auto; ">
-                <h4> <strong>Vehicle Name: </strong> <?php echo $car_name; ?></h4>
+                <h4> <strong> Name: </strong> <?php echo $car_name; ?></h4>
                 <br>
-                <h4> <strong>Vehicle Number:</strong> <?php echo $car_nameplate; ?></h4>
+                <h4> <strong>Serial Number:</strong> <?php echo $car_nameplate; ?></h4>
                 <br>
                 
                 <?php     
                 if($charge_type == "days"){
                 ?>
-                     <h4> <strong>Fare:</strong> rwf<?php echo $fare; ?>/day</h4>
+                     <h4> <strong>Charge:</strong> rwf<?php echo $fare; ?>/day</h4>
                 <?php } else {
                     ?>
 
-                    <h4> <strong>Fare:</strong> rwf<?php echo $fare; ?>/hr</h4>
+                    <h4> <strong>Charge:</strong> rwf<?php echo $fare; ?>/hr</h4>
 
                    
 
@@ -244,13 +244,13 @@ if(!isset($_SESSION['login_customer'])){
                 <br>
                 <h4> <strong>Return Date: </strong> <?php echo $rent_end_date; ?></h4>
                 <br>
-                <h4> <strong>Driver Name: </strong> <?php echo $driver_name; ?> </h4>
+                <h4> <strong> Delivery Person Name: </strong> <?php echo $driver_name; ?> </h4>
                 <br>
-                <h4> <strong>Driver Gender: </strong> <?php echo $driver_gender; ?> </h4>
+                <h4> <strong> Gender: </strong> <?php echo $driver_gender; ?> </h4>
                 <br>
-                <h4> <strong>Driver License number: </strong>  <?php echo $dl_number; ?> </h4>
+                <h4> <strong>serial number: </strong>  <?php echo $dl_number; ?> </h4>
                 <br>
-                <h4> <strong>Driver Contact:</strong>  <?php echo $driver_phone; ?></h4>
+                <h4> <strong> Contact:</strong>  <?php echo $driver_phone; ?></h4>
                 <br>
                 <h4> <strong>Client Name:</strong>  <?php echo $client_name; ?></h4>
                 <br>
@@ -272,7 +272,7 @@ if(!isset($_SESSION['login_customer'])){
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                   Equipment Rental </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -291,8 +291,8 @@ if(!isset($_SESSION['login_customer'])){
                     <ul class="nav navbar-nav navbar-right">
             <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="entercar.php">Add Car</a></li>
-              <li> <a href="enterdriver.php"> Add Driver</a></li>
+              <li> <a href="entercar.php">Add Equipment</a></li>
+              <li> <a href="enterdriver.php"> Add Delivery Mode</a></li>
               <li> <a href="clientview.php">View</a></li>
 
             </ul>

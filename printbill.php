@@ -26,7 +26,7 @@ $conn = Connect();
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                Equipment Rental </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -180,7 +180,7 @@ else {
     </div>
     <br>
 
-    <h2 class="text-center"> Thank you for visiting Patna Car Rental! We wish you have a safe ride. </h2>
+    <h2 class="text-center"> Thank you for visiting Equipment Rental! </h2>
 
     <h3 class="text-center"> <strong>Your Order Number:</strong> <span style="color: blue;"><?php echo "$id"; ?></span> </h3>
 
