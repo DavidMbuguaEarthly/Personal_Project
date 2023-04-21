@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title> customer Signup | PATNA equipment Rental </title>
+    <title> customer Signup | Patna Car Rental </title>
   </head>
   <?php session_start(); ?>
   <link rel="shortcut icon" type="image/png" href="assets/img/P.png.png">
@@ -23,7 +23,7 @@
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA equipment RENTAL </a>
+                   PATNA CAR RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -40,9 +40,9 @@
                     </li>
                     <li>
                     <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="enterequipment.php">Add equipment</a></li>
+              <li> <a href="entercar.php">Add Car</a></li>
               <li> <a href="enterdriver.php"> Add Driver</a></li>
               <li> <a href="clientview.php">View</a></li>
 
@@ -114,23 +114,23 @@ function GetImageExtension($imagetype) {
     if(empty($imagetype)) return false;
     
     switch($imagetype) {
-        case 'assets/img/equipment/bmp': return '.bmp';
-        case 'assets/img/equipment/gif': return '.gif';
-        case 'assets/img/equipment/jpeg': return '.jpg';
-        case 'assets/img/equipment/png': return '.png';
+        case 'assets/img/cars/bmp': return '.bmp';
+        case 'assets/img/cars/gif': return '.gif';
+        case 'assets/img/cars/jpeg': return '.jpg';
+        case 'assets/img/cars/png': return '.png';
         default: return false;
     }
 }
 
-$equipment_name = $conn->real_escape_string($_POST['equipment_name']);
-$equipment_nameplate = $conn->real_escape_string($_POST['equipment_nameplate']);
+$car_name = $conn->real_escape_string($_POST['car_name']);
+$car_nameplate = $conn->real_escape_string($_POST['car_nameplate']);
 $ac_price = $conn->real_escape_string($_POST['ac_price']);
 $non_ac_price = $conn->real_escape_string($_POST['non_ac_price']);
 $ac_price_per_day = $conn->real_escape_string($_POST['ac_price_per_day']);
 $non_ac_price_per_day = $conn->real_escape_string($_POST['non_ac_price_per_day']);
-$equipment_availability = "yes";
+$car_availability = "yes";
 
-//$query = "INSERT into equipment(equipment_name,equipment_nameplate,ac_price,non_ac_price,equipment_availability) VALUES('" . $equipment_name . "','" . $equipment_nameplate . "','" . $ac_price . "','" . $non_ac_price . "','" . $equipment_availability ."')";
+//$query = "INSERT into cars(car_name,car_nameplate,ac_price,non_ac_price,car_availability) VALUES('" . $car_name . "','" . $car_nameplate . "','" . $ac_price . "','" . $non_ac_price . "','" . $car_availability ."')";
 //$success = $conn->query($query);
 
 
@@ -140,14 +140,14 @@ if (!empty($_FILES["uploadedimage"]["name"])) {
     $imgtype=$_FILES["uploadedimage"]["type"];
     $ext= GetImageExtension($imgtype);
     $imagename=$_FILES["uploadedimage"]["name"];
-    $target_path = "assets/img/equipment/".$imagename;
+    $target_path = "assets/img/cars/".$imagename;
 
     if(move_uploaded_file($temp_name, $target_path)) {
-        //$query0="INSERT into equipment (equipment_img) VALUES ('".$target_path."')";
-      //  $query0 = "UPDATE equipment SET equipment_img = '$target_path' WHERE ";
+        //$query0="INSERT into cars (car_img) VALUES ('".$target_path."')";
+      //  $query0 = "UPDATE cars SET car_img = '$target_path' WHERE ";
         //$success0 = $conn->query($query0);
 
-        $query = "INSERT into equipment(equipment_name,equipment_nameplate,equipment_img,ac_price,non_ac_price,ac_price_per_day,non_ac_price_per_day,equipment_availability) VALUES('" . $equipment_name . "','" . $equipment_nameplate . "','".$target_path."','" . $ac_price . "','" . $non_ac_price . "','" . $ac_price_per_day . "','" . $non_ac_price_per_day . "','" . $equipment_availability ."')";
+        $query = "INSERT into cars(car_name,car_nameplate,car_img,ac_price,non_ac_price,ac_price_per_day,non_ac_price_per_day,car_availability) VALUES('" . $car_name . "','" . $car_nameplate . "','".$target_path."','" . $ac_price . "','" . $non_ac_price . "','" . $ac_price_per_day . "','" . $non_ac_price_per_day . "','" . $car_availability ."')";
         $success = $conn->query($query);
 
         
@@ -156,30 +156,30 @@ if (!empty($_FILES["uploadedimage"]["name"])) {
 }
 
 
-// Taking equipment_id from equipment
+// Taking car_id from cars
 
-$query1 = "SELECT equipment_id from equipment where equipment_nameplate = '$equipment_nameplate'";
+$query1 = "SELECT car_id from cars where car_nameplate = '$car_nameplate'";
 
 $result = mysqli_query($conn, $query1);
 $rs = mysqli_fetch_array($result, MYSQLI_BOTH);
-$equipment_id = $rs['equipment_id'];
+$car_id = $rs['car_id'];
  
 
-$query2 = "INSERT into clientequipment(equipment_id,client_username) values('" . $equipment_id ."','" . $_SESSION['login_client'] . "')";
+$query2 = "INSERT into clientcars(car_id,client_username) values('" . $car_id ."','" . $_SESSION['login_client'] . "')";
 $success2 = $conn->query($query2);
 
 if (!$success){ ?>
     <div class="container">
 	<div class="jumbotron" style="text-align: center;">
-        equipment with the same vehicle number already exists!
+        Car with the same vehicle number already exists!
         <?php echo $conn->error; ?>
         <br><br>
-        <a href="enterequipment.php" class="btn btn-default"> Go Back </a>
+        <a href="entercar.php" class="btn btn-default"> Go Back </a>
 </div>
 <?php	
 }
 else {
-    header("location: enterequipment.php"); //Redirecting 
+    header("location: entercar.php"); //Redirecting 
 }
 
 $conn->close();
@@ -192,7 +192,7 @@ $conn->close();
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 PATNA equipment Rental</h5>
+                    <h5>© 2018 Patna Car Rental</h5>
                 </div>
             </div>
         </div>

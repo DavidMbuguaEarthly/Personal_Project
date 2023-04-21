@@ -7,7 +7,7 @@ if(!isset($_SESSION['login_customer'])){
     header("location: customerlogin.php");
 }
 ?> 
-<title>Book equipment </title>
+<title>Book Car </title>
 <head>
     <script type="text/javascript" src="assets/ajs/angular.min.js"> </script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -32,7 +32,7 @@ if(!isset($_SESSION['login_customer'])){
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA equipment RENTAL </a>
+                   PATNA CAR RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -49,9 +49,9 @@ if(!isset($_SESSION['login_customer'])){
                     </li>
                     <li>
                     <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="enterequipment.php">Add equipment</a></li>
+              <li> <a href="entercar.php">Add Car</a></li>
               <li> <a href="enterdriver.php"> Add Driver</a></li>
               <li> <a href="clientview.php">View</a></li>
 
@@ -78,9 +78,9 @@ if(!isset($_SESSION['login_customer'])){
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="equipmentet"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="prereturnequipment.php">Return Now</a></li>
+              <li> <a href="prereturncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
             </ul>
             </li>
@@ -124,17 +124,17 @@ if(!isset($_SESSION['login_customer'])){
       <div class="form-area">
         <form role="form" action="bookingconfirm.php" method="POST">
         <br style="clear: both">
-          <h2 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Rent your dream equipment here </h2><br>
+          <h2 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Rent your dream car here </h2><br>
 
         <?php
-        $equipment_id = $_GET["id"];
-        $sql1 = "SELECT * FROM equipment WHERE equipment_id = '$equipment_id'";
+        $car_id = $_GET["id"];
+        $sql1 = "SELECT * FROM cars WHERE car_id = '$car_id'";
         $result1 = mysqli_query($conn, $sql1);
 
         if(mysqli_num_rows($result1)){
             while($row1 = mysqli_fetch_assoc($result1)){
-                $equipment_name = $row1["equipment_name"];
-                $equipment_nameplate = $row1["equipment_nameplate"];
+                $car_name = $row1["car_name"];
+                $car_nameplate = $row1["car_nameplate"];
                 $ac_price = $row1["ac_price"];
                 $non_ac_price = $row1["non_ac_price"];
                 $ac_price_per_day = $row1["ac_price_per_day"];
@@ -145,11 +145,11 @@ if(!isset($_SESSION['login_customer'])){
         ?>
 
           <!-- <div class="form-group"> -->
-              <h5> equipment:&nbsp;  <?php echo($equipment_name);?></h5>
+              <h5> Car:&nbsp;  <?php echo($car_name);?></h5>
          <!-- </div> -->
          
           <!-- <div class="form-group"> -->
-            <h5> Vehicle Number:&nbsp; <?php echo($equipment_nameplate);?></h5>
+            <h5> Vehicle Number:&nbsp; <?php echo($car_nameplate);?></h5>
           <!-- </div>      -->
         <!-- <div class="form-group"> -->
         <?php $today = date("Y-m-d") ?>
@@ -160,7 +160,7 @@ if(!isset($_SESSION['login_customer'])){
           <input type="date" name="rent_end_date" min="<?php echo($today);?>" required="">
         <!-- </div>      -->
         
-        <h5> Choose your equipment type:  &nbsp;
+        <h5> Choose your car type:  &nbsp;
             <input onclick="reveal()" type="radio" name="radio" value="ac" ng-model="myVar"> AC &nbsp;
             <input onclick="reveal()" type="radio" name="radio" value="non_ac" ng-model="myVar"> Non-AC
                 
@@ -173,18 +173,18 @@ if(!isset($_SESSION['login_customer'])){
                      </div>
                     <div ng-switch-when="ac">
                     <!-- <div class="form-group"> -->
-                <h5>Fare: <?php echo("rwf" . $ac_price . "/hr and rwf" . $ac_price_per_day . "/day");?><h5>    
+                <h5>Fare: <?php echo("rwf" . $ac_price . "/km and rwf" . $ac_price_per_day . "/day");?><h5>    
                 <!-- </div>    -->
                      </div>
                      <div ng-switch-when="non_ac">
                      <!-- <div class="form-group"> -->
-                <h5>Fare: <?php echo("rwf" . $non_ac_price . "/hr and rwf" . $non_ac_price_per_day . "/day");?><h5>    
+                <h5>Fare: <?php echo("rwf" . $non_ac_price . "/km and rwf" . $non_ac_price_per_day . "/day");?><h5>    
                 <!-- </div>   -->
                      </div>
         </div>
 
          <h5> Choose charge type:  &nbsp;
-            <input onclick="reveal()" type="radio" name="radio1" value="hr"> per hr(s) &nbsp;
+            <input onclick="reveal()" type="radio" name="radio1" value="km"> per km(s) &nbsp;
             <input onclick="reveal()" type="radio" name="radio1" value="days"> per day(s)
 
             <br><br>
@@ -192,7 +192,7 @@ if(!isset($_SESSION['login_customer'])){
                 Choose a driver: &nbsp;
                 <select name="driver_id_from_dropdown" ng-model="myVar1">
                         <?php
-                        $sql2 = "SELECT * FROM driver d WHERE d.driver_availability = 'yes' AND d.client_username IN (SELECT cc.client_username FROM clientequipment cc WHERE cc.equipment_id = '$equipment_id')";
+                        $sql2 = "SELECT * FROM driver d WHERE d.driver_availability = 'yes' AND d.client_username IN (SELECT cc.client_username FROM clientcars cc WHERE cc.car_id = '$car_id')";
                         $result2 = mysqli_query($conn, $sql2);
 
                         if(mysqli_num_rows($result2) > 0){
@@ -220,7 +220,7 @@ if(!isset($_SESSION['login_customer'])){
                 
 
                 <?php
-                        $sql3 = "SELECT * FROM driver d WHERE d.driver_availability = 'yes' AND d.client_username IN (SELECT cc.client_username FROM clientequipment cc WHERE cc.equipment_id = '$equipment_id')";
+                        $sql3 = "SELECT * FROM driver d WHERE d.driver_availability = 'yes' AND d.client_username IN (SELECT cc.client_username FROM clientcars cc WHERE cc.car_id = '$car_id')";
                         $result3 = mysqli_query($conn, $sql3);
 
                         if(mysqli_num_rows($result3) > 0){
@@ -239,7 +239,7 @@ if(!isset($_SESSION['login_customer'])){
                 </div>
                 <?php }} ?>
                 </div>
-                <input type="hidden" name="hidden_equipmentid" value="<?php echo $equipment_id; ?>">
+                <input type="hidden" name="hidden_carid" value="<?php echo $car_id; ?>">
                 
          
            <input type="submit"name="submit" value="Book Now" class="btn btn-success pull-right">     
@@ -257,7 +257,7 @@ if(!isset($_SESSION['login_customer'])){
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 PATNA equipment Rental</h5>
+                    <h5>© 2018 Patna Car Rental</h5>
                 </div>
             </div>
         </div>

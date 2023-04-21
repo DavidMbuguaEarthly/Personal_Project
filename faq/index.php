@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/w3css/w3.css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <title>FAQ | PATNA equipment Rental</title>
+    <title>FAQ | Patna Car Rental</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="/../Stribon Technologies/index.php">
-                   PATNA equipment RENTAL </a>
+                   PATNA CAR RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -50,9 +50,9 @@
                         </li>
                         <li>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
+                                <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                                     <ul class="dropdown-menu">
-                                        <li> <a href="enterequipment.php">Add equipment</a></li>
+                                        <li> <a href="entercar.php">Add Car</a></li>
                                         <li> <a href="enterdriver.php"> Add Driver</a></li>
                                         <li> <a href="clientview.php">View</a></li>
 
@@ -79,9 +79,9 @@
                                 <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                             </li>
                             <ul class="nav navbar-nav">
-                                <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="equipmentet"></span> </a>
+                                <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
                                     <ul class="dropdown-menu">
-                                        <li> <a href="prereturnequipment.php">Return Now</a></li>
+                                        <li> <a href="prereturncar.php">Return Now</a></li>
                                         <li> <a href="mybookings.php"> My Bookings</a></li>
                                     </ul>
                                 </li>
@@ -136,21 +136,21 @@
                 <li>
                     <a class="cd-faq-trigger" href="#0">How do I pay for my Rental?</a>
                     <div class="cd-faq-content">
-                        <p>PATNA equipment Rentals gladly accepts Masterequipmentd and Visa. Personal Checks are also accepted providing you purchase CDW and Theft Protection on your rental.
+                        <p>Patna Car Rentals gladly accepts Mastercard and Visa. Personal Checks are also accepted providing you purchase CDW and Theft Protection on your rental.
                          At this time we would like to advise that personal checks are not accepted locally.</p>
                     </div>
                     <!-- cd-faq-content -->
                 </li>
 
                 <li>
-                    <a class="cd-faq-trigger" href="#0">What if i find a better rate for a rental equipment?</a>
+                    <a class="cd-faq-trigger" href="#0">What if i find a better rate for a rental car?</a>
                     <div class="cd-faq-content">
-                        <p>One of the many great things about PATNA equipment Rental is our rental rates and services are guaranteed to be the very best in the industry. If you come across a lower price from a competitor and the rate is on a comparable vehicle including the same terms, locations, and rental equipment fees we will be glad to beat the price for you. Please complete our Guaranteed Best Rate form if you have found a better rate with one of our competitors.</div>
+                        <p>One of the many great things about Patna Car Rental is our rental rates and services are guaranteed to be the very best in the industry. If you come across a lower price from a competitor and the rate is on a comparable vehicle including the same terms, locations, and rental car fees we will be glad to beat the price for you. Please complete our Guaranteed Best Rate form if you have found a better rate with one of our competitors.</div>
                     <!-- cd-faq-content -->
                 </li>
 
                 <li>
-                    <a class="cd-faq-trigger" href="#0">Will i need a driving license to rent a equipment?</a>
+                    <a class="cd-faq-trigger" href="#0">Will i need a driving license to rent a car?</a>
                     <div class="cd-faq-content">
                         <p>A driving license is not needed as a driver is already provided by the client.</p>
                     </div>
@@ -158,7 +158,7 @@
                 </li>
 
                 <li>
-                    <a class="cd-faq-trigger" href="#0">Is there a fee if i return the equipment after the due date?</a>
+                    <a class="cd-faq-trigger" href="#0">Is there a fee if i return the car after the due date?</a>
                     <div class="cd-faq-content">
                         <p>Yes, we charge rwf200/- day after the due date.</p>
                     </div>
@@ -208,9 +208,9 @@
                     <!-- cd-faq-content -->
                 </li>
                 <li>
-                    <a class="cd-faq-trigger" href="#0">Is my credit equipmentd information stored in my account?</a>
+                    <a class="cd-faq-trigger" href="#0">Is my credit card information stored in my account?</a>
                     <div class="cd-faq-content">
-                        <p>No.We do not store any credit equipmentd information in your account.</p>
+                        <p>No.We do not store any credit card information in your account.</p>
                     </div>
                     <!-- cd-faq-content -->
                 </li>
@@ -232,7 +232,7 @@
                 <li>
                     <a class="cd-faq-trigger" href="#0">How can i pay for my chauffeur services?</a>
                     <div class="cd-faq-content">
-                        <p>PATNA equipment Rental gladly accepts Masterequipmentd, Visa, and checks. We also PayTm.</p>
+                        <p>Patna Car Rental gladly accepts MasterCard, Visa, and checks. We also PayTm.</p>
                     </div>
                     <!-- cd-faq-content -->
                 </li>
