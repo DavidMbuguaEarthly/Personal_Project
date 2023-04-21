@@ -26,7 +26,7 @@ $conn = Connect();
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA equipment RENTAL </a>
+                   PATNA CAR RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -43,9 +43,9 @@ $conn = Connect();
                     </li>
                     <li>
                     <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="enterequipment.php">Add equipment</a></li>
+              <li> <a href="entercar.php">Add Car</a></li>
               <li> <a href="enterdriver.php"> Add Driver</a></li>
               <li> <a href="clientview.php">View</a></li>
 
@@ -72,9 +72,9 @@ $conn = Connect();
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="equipmentet"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="prereturnequipment.php">Return Now</a></li>
+              <li> <a href="prereturncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
             </ul>
             </li>
@@ -120,19 +120,19 @@ $distance = NULL;
 $distance_or_days = $conn->real_escape_string($_POST['distance_or_days']);
 $fare = $conn->real_escape_string($_POST['hid_fare']);
 $total_amount = $distance_or_days * $fare;
-$equipment_return_date = date('Y-m-d');
+$car_return_date = date('Y-m-d');
 $return_status = "R";
 $login_customer = $_SESSION['login_customer'];
 
-$sql0 = "SELECT rc.id, rc.rent_end_date, rc.charge_type, rc.rent_start_date, c.equipment_name, c.equipment_nameplate FROM rentedequipment rc, equipment c WHERE id = '$id' AND c.equipment_id = rc.equipment_id";
+$sql0 = "SELECT rc.id, rc.rent_end_date, rc.charge_type, rc.rent_start_date, c.car_name, c.car_nameplate FROM rentedcars rc, cars c WHERE id = '$id' AND c.car_id = rc.car_id";
 $result0 = $conn->query($sql0);
 
 if(mysqli_num_rows($result0) > 0) {
     while($row0 = mysqli_fetch_assoc($result0)){
             $rent_end_date = $row0["rent_end_date"];  
             $rent_start_date = $row0["rent_start_date"];
-            $equipment_name = $row0["equipment_name"];
-            $equipment_nameplate = $row0["equipment_nameplate"];
+            $car_name = $row0["car_name"];
+            $car_nameplate = $row0["car_nameplate"];
             $charge_type = $row0["charge_type"];
     }
 }
@@ -144,7 +144,7 @@ function dateDiff($start, $end) {
     return round($diff / 86400);
 }
 
-$extra_days = dateDiff("$rent_end_date", "$equipment_return_date");
+$extra_days = dateDiff("$rent_end_date", "$car_return_date");
 $total_fine = $extra_days*200;
 
 $duration = dateDiff("$rent_start_date","$rent_end_date");
@@ -155,17 +155,17 @@ if($extra_days>0) {
 
 if($charge_type == "days"){
     $no_of_days = $distance_or_days;
-    $sql1 = "UPDATE rentedequipment SET equipment_return_date='$equipment_return_date', no_of_days='$no_of_days', total_amount='$total_amount', return_status='$return_status' WHERE id = '$id' ";
+    $sql1 = "UPDATE rentedcars SET car_return_date='$car_return_date', no_of_days='$no_of_days', total_amount='$total_amount', return_status='$return_status' WHERE id = '$id' ";
 } else {
     $distance = $distance_or_days;
-    $sql1 = "UPDATE rentedequipment SET equipment_return_date='$equipment_return_date', distance='$distance', no_of_days='$duration', total_amount='$total_amount', return_status='$return_status' WHERE id = '$id' ";
+    $sql1 = "UPDATE rentedcars SET car_return_date='$car_return_date', distance='$distance', no_of_days='$duration', total_amount='$total_amount', return_status='$return_status' WHERE id = '$id' ";
 }
 
 $result1 = $conn->query($sql1);
 
 if ($result1){
-     $sql2 = "UPDATE equipment c, driver d, rentedequipment rc SET c.equipment_availability='yes', d.driver_availability='yes' 
-     WHERE rc.equipment_id=c.equipment_id AND rc.driver_id=d.driver_id AND rc.customer_username = '$login_customer' AND rc.id = '$id'";
+     $sql2 = "UPDATE cars c, driver d, rentedcars rc SET c.car_availability='yes', d.driver_availability='yes' 
+     WHERE rc.car_id=c.car_id AND rc.driver_id=d.driver_id AND rc.customer_username = '$login_customer' AND rc.id = '$id'";
      $result2 = $conn->query($sql2);
 }
 else {
@@ -175,12 +175,12 @@ else {
 
     <div class="container">
         <div class="jumbotron">
-            <h1 class="text-center" style="color: green;"><span class="glyphicon glyphicon-ok-circle"></span> equipment Returned</h1>
+            <h1 class="text-center" style="color: green;"><span class="glyphicon glyphicon-ok-circle"></span> Car Returned</h1>
         </div>
     </div>
     <br>
 
-    <h2 class="text-center"> Thank you for visiting PATNA equipment Rental! We wish you have a safe ride. </h2>
+    <h2 class="text-center"> Thank you for visiting Patna Car Rental! We wish you have a safe ride. </h2>
 
     <h3 class="text-center"> <strong>Your Order Number:</strong> <span style="color: blue;"><?php echo "$id"; ?></span> </h3>
 
@@ -197,15 +197,15 @@ else {
                 <br>
             </div>
             <div class="col-md-10" style="float: none; margin: 0 auto; ">
-                <h4> <strong>Vehicle Name: </strong> <?php echo $equipment_name;?></h4>
+                <h4> <strong>Vehicle Name: </strong> <?php echo $car_name;?></h4>
                 <br>
-                <h4> <strong>Vehicle Number:</strong> <?php echo $equipment_nameplate; ?></h4>
+                <h4> <strong>Vehicle Number:</strong> <?php echo $car_nameplate; ?></h4>
                 <br>
-                <h4> <strong>Fare:&nbsp;</strong>  rwf<?php 
+                <h4> <strong>Fare:&nbsp;</strong>  ₹<?php 
             if($charge_type == "days"){
                     echo ($fare . "/day");
                 } else {
-                    echo ($fare . "/hr");
+                    echo ($fare . "/km");
                 }
             ?></h4>
                 <br>
@@ -215,22 +215,22 @@ else {
                 <br>
                 <h4> <strong>Rent End Date: </strong> <?php echo $rent_end_date; ?></h4>
                 <br>
-                <h4> <strong>equipment Return Date: </strong> <?php echo $equipment_return_date; ?> </h4>
+                <h4> <strong>Car Return Date: </strong> <?php echo $car_return_date; ?> </h4>
                 <br>
                 <?php if($charge_type == "days"){?>
                     <h4> <strong>Number of days:</strong> <?php echo $distance_or_days; ?>day(s)</h4>
                 <?php } else { ?>
-                    <h4> <strong>Distance Travelled:</strong> <?php echo $distance_or_days; ?>hr(s)</h4>
+                    <h4> <strong>Distance Travelled:</strong> <?php echo $distance_or_days; ?>km(s)</h4>
                 <?php } ?>
                 <br>
                 <?php
                     if($extra_days > 0){
                         
                 ?>
-                <h4> <strong>Total Fine:</strong> <label class="text-danger"> rwf<?php echo $total_fine; ?>/- </label> for <?php echo $extra_days;?> extra days.</h4>
+                <h4> <strong>Total Fine:</strong> <label class="text-danger"> ₹<?php echo $total_fine; ?>/- </label> for <?php echo $extra_days;?> extra days.</h4>
                 <br>
                 <?php } ?>
-                <h4> <strong>Total Amount: </strong> rwf<?php echo $total_amount; ?>/-     </h4>
+                <h4> <strong>Total Amount: </strong> ₹<?php echo $total_amount; ?>/-     </h4>
                 <br>
             </div>
         </div>
@@ -245,7 +245,7 @@ else {
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 PATNA equipment Rental</h5>
+                    <h5>© 2018 Patna Car Rental</h5>
                 </div>
             </div>
         </div>

@@ -25,7 +25,7 @@ $conn = Connect();
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA equipment RENTAL </a>
+                   PATNA CAR RENTAL </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -42,9 +42,9 @@ $conn = Connect();
                     </li>
                     <li>
                     <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="equipmentet"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="enterequipment.php">Add equipment</a></li>
+              <li> <a href="entercar.php">Add Car</a></li>
               <li> <a href="enterdriver.php"> Add Driver</a></li>
               <li> <a href="clientview.php">View</a></li>
 
@@ -71,9 +71,9 @@ $conn = Connect();
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_customer']; ?></a>
                     </li>
                     <ul class="nav navbar-nav">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="equipmentet"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Garagge <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="returnequipment.php">Return Now</a></li>
+              <li> <a href="returncar.php">Return Now</a></li>
               <li> <a href="mybookings.php"> My Bookings</a></li>
             </ul>
             </li>
@@ -119,14 +119,14 @@ function dateDiff($start, $end) {
     return round($diff / 86400);
 }
  $id = $_GET["id"];
- $sql1 = "SELECT c.equipment_name, c.equipment_nameplate, rc.rent_start_date, rc.rent_end_date, rc.fare, rc.charge_type, d.driver_name, d.driver_phone
- FROM rentedequipment rc, equipment c, driver d
- WHERE id = '$id' AND c.equipment_id=rc.equipment_id AND d.driver_id = rc.driver_id";
+ $sql1 = "SELECT c.car_name, c.car_nameplate, rc.rent_start_date, rc.rent_end_date, rc.fare, rc.charge_type, d.driver_name, d.driver_phone
+ FROM rentedcars rc, cars c, driver d
+ WHERE id = '$id' AND c.car_id=rc.car_id AND d.driver_id = rc.driver_id";
  $result1 = $conn->query($sql1);
  if (mysqli_num_rows($result1) > 0) {
     while($row = mysqli_fetch_assoc($result1)) {
-        $equipment_name = $row["equipment_name"];
-        $equipment_nameplate = $row["equipment_nameplate"];
+        $car_name = $row["car_name"];
+        $car_nameplate = $row["car_nameplate"];
         $driver_name = $row["driver_name"];
         $driver_phone = $row["driver_phone"];
         $rent_start_date = $row["rent_start_date"];
@@ -145,19 +145,19 @@ function dateDiff($start, $end) {
           <h3 style="margin-bottom: 5px; text-align: center; font-size: 30px;"> Journey Details </h3>
           <h6 style="margin-bottom: 25px; text-align: center; font-size: 12px;"> Allow your driver to fill the below form </h6>
 
-           <h5> equipment:&nbsp;  <?php echo($equipment_name);?></h5>
+           <h5> Car:&nbsp;  <?php echo($car_name);?></h5>
 
-           <h5> Vehicle Number:&nbsp;  <?php echo($equipment_nameplate);?></h5>
+           <h5> Vehicle Number:&nbsp;  <?php echo($car_nameplate);?></h5>
 
            <h5> Rent date:&nbsp;  <?php echo($rent_start_date);?></h5>
 
            <h5> End Date:&nbsp;  <?php echo($rent_end_date);?></h5>
 
-           <h5> Fare:&nbsp;  rwf<?php 
+           <h5> Fare:&nbsp;  ₹<?php 
             if($charge_type == "days"){
                     echo ($fare . "/day");
                 } else {
-                    echo ($fare . "/hr");
+                    echo ($fare . "/km");
                 }
             ?>
             </h5>
@@ -165,9 +165,9 @@ function dateDiff($start, $end) {
            <h5> Driver Name:&nbsp;  <?php echo($driver_name);?></h5>
 
            <h5> Driver Contact:&nbsp;  <?php echo($driver_phone);?></h5>
-          <?php if($charge_type == "hr") { ?>
+          <?php if($charge_type == "km") { ?>
           <div class="form-group">
-            <input type="text" class="form-control" id="distance_or_days" name="distance_or_days" placeholder="Enter the distance travelled (in hr)" required="" autofocus>
+            <input type="text" class="form-control" id="distance_or_days" name="distance_or_days" placeholder="Enter the distance travelled (in km)" required="" autofocus>
           </div>
           <?php }  else { ?>
             <h5> Number of Day(s):&nbsp;  <?php echo($no_of_days);?></h5>
@@ -188,7 +188,7 @@ function dateDiff($start, $end) {
             <hr>
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>© 2018 PATNA equipment Rental</h5>
+                    <h5>© 2018 Patna Car Rental</h5>
                 </div>
             </div>
         </div>
