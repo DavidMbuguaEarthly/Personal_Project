@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title> customer Signup | Patna Car Rental </title>
+    <title> customer Signup | Equipment Rental </title>
   </head>
   <link rel="shortcut icon" type="image/png" href="assets/img/P.png.png">
   <link rel="stylesheet" type = "text/css" href ="assets/css/manager_registered_success.css">
@@ -44,7 +44,7 @@
                     <i class="fa fa-bars"></i>
                     </button>
                 <a class="navbar-brand page-scroll" href="index.php">
-                   PATNA CAR RENTAL </a>
+                Equipment Rental </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -63,8 +63,8 @@
                     <ul class="nav navbar-nav navbar-right">
             <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="entercar.php">Add Car</a></li>
-              <li> <a href="enterdriver.php"> Add Driver</a></li>
+              <li> <a href="entercar.php">Add Equipment</a></li>
+              <li> <a href="enterdriver.php"> Add Delivery Mode</a></li>
               <li> <a href="clientview.php">View</a></li>
 
             </ul>
