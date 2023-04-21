@@ -229,7 +229,11 @@ if(!isset($_SESSION['login_customer'])){
                      <h4> <strong>Fare:</strong> rwf<?php echo $fare; ?>/day</h4>
                 <?php } else {
                     ?>
+
                     <h4> <strong>Fare:</strong> rwf<?php echo $fare; ?>/hr</h4>
+
+                   
+
 
                 <?php } ?>
 

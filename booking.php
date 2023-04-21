@@ -173,12 +173,17 @@ if(!isset($_SESSION['login_customer'])){
                      </div>
                     <div ng-switch-when="ac">
                     <!-- <div class="form-group"> -->
+
                 <h5>Fare: <?php echo("rwf" . $ac_price . "/hr and rwf" . $ac_price_per_day . "/day");?><h5>    
+
                 <!-- </div>    -->
                      </div>
                      <div ng-switch-when="non_ac">
                      <!-- <div class="form-group"> -->
+
                 <h5>Charges: <?php echo("rwf" . $non_ac_price . "/hr and rwf" . $non_ac_price_per_day . "/day");?><h5>    
+
+               
                 <!-- </div>   -->
                      </div>
         </div>
