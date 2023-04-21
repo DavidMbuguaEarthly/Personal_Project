@@ -43,8 +43,8 @@ include('session_client.php'); ?>
                     <ul class="nav navbar-nav navbar-right">
             <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Control Panel <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="entercar.php">Add Car</a></li>
-              <li> <a href="enterdriver.php"> Add Driver</a></li>
+              <li> <a href="entercar.php">Add Equipment</a></li>
+              <li> <a href="enterdriver.php"> Add Delivery Mode</a></li>
               <li> <a href="clientview.php">View</a></li>
 
             </ul>
@@ -111,36 +111,36 @@ include('session_client.php'); ?>
       <div class="form-area">
         <form role="form" action="entercar1.php" enctype="multipart/form-data" method="POST">
         <br style="clear: both">
-          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Want to rent your car? Give us your car details. </h3>
+          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Want to rent your equipment? Give us the equipment details. </h3>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="car_name" name="car_name" placeholder="Car Name " required autofocus="">
+            <input type="text" class="form-control" id="car_name" name="car_name" placeholder="Equipment name " required autofocus="">
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="car_nameplate" name="car_nameplate" placeholder="Vehicle Number (Name Plate Number)" required>
+            <input type="text" class="form-control" id="car_nameplate" name="car_nameplate" placeholder="Serial Number" required>
           </div>     
 
           <div class="form-group">
-            <input type="text" class="form-control" id="ac_price" name="ac_price" placeholder="AC Fare per hr (in rupees)" required>
+            <input type="text" class="form-control" id="ac_price" name="ac_price" placeholder="Electric Charge per hr (in rwf)" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="non_ac_price" name="non_ac_price" placeholder="Non-AC Fare per hr (in rupees)" required>
+            <input type="text" class="form-control" id="non_ac_price" name="non_ac_price" placeholder="Non-electric Charge per hr (in rwf)" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="ac_price_per_day" name="ac_price_per_day" placeholder="AC Fare per day (in rupees)" required>
+            <input type="text" class="form-control" id="ac_price_per_day" name="ac_price_per_day" placeholder="Electric Charge per hr (in rwf)" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="non_ac_price_per_day" name="non_ac_price_per_day" placeholder="Non-AC Fare per day (in rupees)" required>
+            <input type="text" class="form-control" id="non_ac_price_per_day" name="non_ac_price_per_day" placeholder="Non-electric Charge per hr (in rwf)" required>
           </div>
 
           <div class="form-group">
             <input name="uploadedimage" type="file">
           </div>
-           <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right"> Add car</button>    
+           <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right"> Add Equipment</button>    
         </form>
       </div>
     </div>
@@ -150,7 +150,7 @@ include('session_client.php'); ?>
     <div class="form-area" style="padding: 0px 100px 100px 100px;">
         <form action="" method="POST">
         <br style="clear: both">
-          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> My Cars </h3>
+          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> My Equipment </h3>
 <?php
 // Storing Session
 $user_check=$_SESSION['login_client'];
@@ -165,11 +165,11 @@ if (mysqli_num_rows($result) > 0) {
       <tr>
         <th></th>
         <th width="24%"> Name</th>
-        <th width="15%"> Nameplate </th>
-        <th width="13%"> AC Fare (/hr) </th>
-        <th width="17%"> Non-AC Fare (/hr)</th>
-        <th width="13%"> AC Fare (/day)</th>
-        <th width="17%"> Non-AC Fare (/day)</th>
+        <th width="15%"> Serial Number </th>
+        <th width="13%"> Electric charge (/hr) </th>
+        <th width="17%"> Non-Electric charge (/hr)</th>
+        <th width="13%"> Electric charge (/day)</th>
+        <th width="17%"> Non-Electric charge (/day)</th>
         <th width="1%"> Availability </th>
       </tr>
     </thead>
@@ -197,7 +197,7 @@ if (mysqli_num_rows($result) > 0) {
   </div>
     <br>
   <?php } else { ?>
-  <h4><center>0 Cars available</center> </h4>
+  <h4><center>0 Equipment available</center> </h4>
   <?php } ?>
         </form>
 </div>        
