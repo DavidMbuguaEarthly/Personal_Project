@@ -7,7 +7,7 @@ if(!isset($_SESSION['login_customer'])){
     header("location: customerlogin.php");
 }
 ?> 
-<title>Book Car </title>
+<title>Book Equipment </title>
 <head>
     <script type="text/javascript" src="assets/ajs/angular.min.js"> </script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -168,13 +168,13 @@ if(!isset($_SESSION['login_customer'])){
         <div ng-switch="myVar"> 
         <div ng-switch-default>
                     <!-- <div class="form-group"> -->
-                <h5>Fare: <h5>    
+                <h5>Charge: <h5>    
                 <!-- </div>    -->
                      </div>
                     <div ng-switch-when="ac">
                     <!-- <div class="form-group"> -->
 
-                <h5>Fare: <?php echo("rwf" . $ac_price . "/hr and rwf" . $ac_price_per_day . "/day");?><h5>    
+                <h5>Charge: <?php echo("rwf" . $ac_price . "/hr and rwf" . $ac_price_per_day . "/day");?><h5>    
 
                 <!-- </div>    -->
                      </div>

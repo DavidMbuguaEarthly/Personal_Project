@@ -157,8 +157,8 @@ $conn = Connect();
             ?>
         <div class="container">
       <div class="jumbotron">
-        <h1>No booked cars</h1>
-        <p> Rent some cars now <?php echo $conn->error; ?> </p>
+        <h1>No booked equipment</h1>
+        <p> Rent some equipment now <?php echo $conn->error; ?> </p>
       </div>
     </div>
 

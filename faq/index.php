@@ -124,7 +124,7 @@
         <ul class="cd-faq-categories">
             <li><a class="selected" href="#basics">Basics</a></li>
             <li><a href="#membership">Membership</a></li>
-            <li><a href="#chauffeur">Chauffeur Services</a></li>
+            <li><a href="#chauffeur">Delivery Services</a></li>
         </ul>
         <!-- cd-faq-categories -->
 
@@ -143,24 +143,24 @@
                 </li>
 
                 <li>
-                    <a class="cd-faq-trigger" href="#0">What if i find a better rate for a rental car?</a>
+                    <a class="cd-faq-trigger" href="#0">What if i find a better rate for a rental Equipment?</a>
                     <div class="cd-faq-content">
                         <p>One of the many great things about Equipment Rental is our rental rates and services are guaranteed to be the very best in the industry. If you come across a lower price from a competitor and the rate is on a comparable vehicle including the same terms, locations, and rental car fees we will be glad to beat the price for you. Please complete our Guaranteed Best Rate form if you have found a better rate with one of our competitors.</div>
                     <!-- cd-faq-content -->
                 </li>
 
                 <li>
-                    <a class="cd-faq-trigger" href="#0">Will i need a driving license to rent a car?</a>
+                    <a class="cd-faq-trigger" href="#0">Will i need a business license to rent an equipment?</a>
                     <div class="cd-faq-content">
-                        <p>A driving license is not needed as a driver is already provided by the client.</p>
+                        <p>NO.</p>
                     </div>
                     <!-- cd-faq-content -->
                 </li>
 
                 <li>
-                    <a class="cd-faq-trigger" href="#0">Is there a fee if i return the car after the due date?</a>
+                    <a class="cd-faq-trigger" href="#0">Is there a fee if i return the equipment after the due date?</a>
                     <div class="cd-faq-content">
-                        <p>Yes, we charge rwf200/- day after the due date.</p>
+                        <p>Yes, we charge rwf2000/- day after the due date.</p>
                     </div>
                     <!-- cd-faq-content -->
                 </li>
@@ -219,18 +219,18 @@
 
             <ul id="chauffeur" class="cd-faq-group">
                 <li class="cd-faq-title">
-                    <h2>Chauffeur service</h2>
+                    <h2>Delivery service</h2>
                 </li>
                 <li>
                     <a class="cd-faq-trigger" href="#0">Do you have meet and greet services?</a>
                     <div class="cd-faq-content">
-                        <p>You will be greeted in airports and other public places with a hand-held sign. We can also meet you at your hotel and in other locations.</p>
+                        <p>You will be greeted in vantage points.</p>
                     </div>
                     <!-- cd-faq-content -->
                 </li>
 
                 <li>
-                    <a class="cd-faq-trigger" href="#0">How can i pay for my chauffeur services?</a>
+                    <a class="cd-faq-trigger" href="#0">How can i pay for my own delivery services?</a>
                     <div class="cd-faq-content">
                         <p>Equipment Rental gladly accepts MasterCard, Visa, and checks. We also PayTm.</p>
                     </div>
@@ -238,9 +238,9 @@
                 </li>
 
                 <li>
-                    <a class="cd-faq-trigger" href="#0">Is there a fee if i change my Chauffeur services?</a>
+                    <a class="cd-faq-trigger" href="#0">Is there a fee if i change my delivery services?</a>
                     <div class="cd-faq-content">
-                        <p>There is no fee to change reservations for chauffeur services.
+                        <p>There is no fee to change reservations for delivery services.
 
 </p>
                     </div>
