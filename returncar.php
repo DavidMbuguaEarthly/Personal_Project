@@ -142,18 +142,18 @@ function dateDiff($start, $end) {
       <div class="form-area">
         <form role="form" action="printbill.php?id=<?php echo $id ?>" method="POST">
         <br style="clear: both">
-          <h3 style="margin-bottom: 5px; text-align: center; font-size: 30px;"> Journey Details </h3>
-          <h6 style="margin-bottom: 25px; text-align: center; font-size: 12px;"> Allow your driver to fill the below form </h6>
+          <h3 style="margin-bottom: 5px; text-align: center; font-size: 30px;"> Business Days </h3>
+          <h6 style="margin-bottom: 25px; text-align: center; font-size: 12px;"> Allow your transporter to fill the below form </h6>
 
-           <h5> Car:&nbsp;  <?php echo($car_name);?></h5>
+           <h5> Equipment:&nbsp;  <?php echo($car_name);?></h5>
 
-           <h5> Vehicle Number:&nbsp;  <?php echo($car_nameplate);?></h5>
+           <h5> Serial Number:&nbsp;  <?php echo($car_nameplate);?></h5>
 
            <h5> Rent date:&nbsp;  <?php echo($rent_start_date);?></h5>
 
            <h5> End Date:&nbsp;  <?php echo($rent_end_date);?></h5>
 
-           <h5> Fare:&nbsp;  rwf<?php 
+           <h5> Charge:&nbsp;  rwf<?php 
             if($charge_type == "days"){
                     echo ($fare . "/day");
                 } else {
@@ -162,9 +162,9 @@ function dateDiff($start, $end) {
             ?>
             </h5>
 
-           <h5> Driver Name:&nbsp;  <?php echo($driver_name);?></h5>
+           <h5> Transporter Name:&nbsp;  <?php echo($driver_name);?></h5>
 
-           <h5> Driver Contact:&nbsp;  <?php echo($driver_phone);?></h5>
+           <h5> Transporter Contact:&nbsp;  <?php echo($driver_phone);?></h5>
           <?php if($charge_type == "hr") { ?>
           <div class="form-group">
             <input type="text" class="form-control" id="distance_or_days" name="distance_or_days" placeholder="Enter the distance travelled (in hr)" required="" autofocus>

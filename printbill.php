@@ -175,7 +175,7 @@ else {
 
     <div class="container">
         <div class="jumbotron">
-            <h1 class="text-center" style="color: green;"><span class="glyphicon glyphicon-ok-circle"></span> Car Returned</h1>
+            <h1 class="text-center" style="color: green;"><span class="glyphicon glyphicon-ok-circle"></span> Equipment  Returned</h1>
         </div>
     </div>
     <br>
@@ -197,9 +197,9 @@ else {
                 <br>
             </div>
             <div class="col-md-10" style="float: none; margin: 0 auto; ">
-                <h4> <strong>Vehicle Name: </strong> <?php echo $car_name;?></h4>
+                <h4> <strong>Equipment Name: </strong> <?php echo $car_name;?></h4>
                 <br>
-                <h4> <strong>Vehicle Number:</strong> <?php echo $car_nameplate; ?></h4>
+                <h4> <strong>Equipment Number:</strong> <?php echo $car_nameplate; ?></h4>
                 <br>
                 <h4> <strong>Fare:&nbsp;</strong>  rwf<?php 
             if($charge_type == "days"){
@@ -215,12 +215,12 @@ else {
                 <br>
                 <h4> <strong>Rent End Date: </strong> <?php echo $rent_end_date; ?></h4>
                 <br>
-                <h4> <strong>Car Return Date: </strong> <?php echo $car_return_date; ?> </h4>
+                <h4> <strong>Equipment Return Date: </strong> <?php echo $car_return_date; ?> </h4>
                 <br>
                 <?php if($charge_type == "days"){?>
                     <h4> <strong>Number of days:</strong> <?php echo $distance_or_days; ?>day(s)</h4>
                 <?php } else { ?>
-                    <h4> <strong>Distance Travelled:</strong> <?php echo $distance_or_days; ?>hr(s)</h4>
+                    <h4> <strong>Time spent:</strong> <?php echo $distance_or_days; ?>hr(s)</h4>
                 <?php } ?>
                 <br>
                 <?php

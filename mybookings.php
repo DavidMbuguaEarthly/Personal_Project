@@ -122,7 +122,7 @@ $conn = Connect();
 ?>
 <div class="container">
       <div class="jumbotron">
-        <h1>Your Bookings</h1>
+        <h1>Your tool Bookings</h1>
         <p> Hope you enjoyed our service </p>
       </div>
     </div>
@@ -131,11 +131,11 @@ $conn = Connect();
 <table class="table table-striped">
   <thead class="thead-dark">
 <tr>
-<th width="15%">Car</th>
+<th width="15%">Equipment</th>
 <th width="15%">Rent Start Date</th>
 <th width="15%">Rent End Date</th>
 <th width="10%">Fare</th>
-<th width="15%">Distance (in hrs)</th>
+<th width="15%">Time (in hrs)</th>
 <th width="15%">Number of Days</th>
 <th width="15%">Total Amount</th>
 </tr>
@@ -169,8 +169,8 @@ $conn = Connect();
             ?>
         <div class="container">
       <div class="jumbotron">
-        <h1>No booked cars</h1>
-        <p> Rent some cars now </p>
+        <h1>No booked equipment</h1>
+        <p> Rent some equipment now </p>
       </div>
     </div>
 

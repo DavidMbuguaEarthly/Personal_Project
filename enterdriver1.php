@@ -124,7 +124,7 @@ $success = $conn->query($query);
 if (!$success){ ?>
     <div class="container">
 	<div class="jumbotron" style="text-align: center;">
-        Car with the same vehicle number already exists!
+        Equipment with the same serial number already exists!
         <br><br>
         <a href="entercar.php" class="btn btn-default"> Go Back </a>
 </div>

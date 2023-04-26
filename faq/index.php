@@ -145,7 +145,7 @@
                 <li>
                     <a class="cd-faq-trigger" href="#0">What if i find a better rate for a rental Equipment?</a>
                     <div class="cd-faq-content">
-                        <p>One of the many great things about Equipment Rental is our rental rates and services are guaranteed to be the very best in the industry. If you come across a lower price from a competitor and the rate is on a comparable vehicle including the same terms, locations, and rental car fees we will be glad to beat the price for you. Please complete our Guaranteed Best Rate form if you have found a better rate with one of our competitors.</div>
+                        <p>One of the many great things about Equipment Rental is our rental rates and services are guaranteed to be the very best in the industry. If you come across a lower price from a competitor and the rate is on a comparable equipment including the same terms, locations, and rental car fees we will be glad to beat the price for you. Please complete our Guaranteed Best Rate form if you have found a better rate with one of our competitors.</div>
                     <!-- cd-faq-content -->
                 </li>
 

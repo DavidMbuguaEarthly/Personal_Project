@@ -122,7 +122,7 @@ $conn = Connect();
 ?>
 <div class="container">
       <div class="jumbotron">
-        <h1>Return your cars here</h1>
+        <h1>Return your equipment here</h1>
         <p> Hope you enjoyed our service </p>
       </div>
     </div>
@@ -131,10 +131,10 @@ $conn = Connect();
 <table class="table table-striped">
   <thead class="thead-dark">
 <tr>
-<th width="30%">Car</th>
+<th width="30%">Equipment</th>
 <th width="20%">Rent Start Date</th>
 <th width="20%">Rent End Date</th>
-<th width="20%">Fare</th>
+<th width="20%">Charge</th>
 <th width="10%">Action</th>
 </tr>
 </thead>
@@ -163,7 +163,7 @@ $conn = Connect();
             ?>
             <div class="container">
       <div class="jumbotron">
-        <h1>No cars to return.</h1>
+        <h1>No Equipment to return.</h1>
         <p> Hope you enjoyed our service </p>
       </div>
     </div>
