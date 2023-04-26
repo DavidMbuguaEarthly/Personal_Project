@@ -131,7 +131,7 @@ $conn = Connect();
 <table class="table table-striped">
   <thead class="thead-dark">
 <tr>
-<th width="20%">Car</th>
+<th width="20%">Equipment</th>
 <th width="15%">Customer Name</th>
 <th width="20%">Rent Start Date</th>
 <th width="20%">Rent End Date</th>
