@@ -135,7 +135,7 @@ $conn = Connect();
 <th width="15%">Customer Name</th>
 <th width="20%">Rent Start Date</th>
 <th width="20%">Rent End Date</th>
-<th width="10%">Distance</th>
+<th width="10%">Time Spent</th>
 <th width="15%">Total Amount</th>
 </tr>
 </thead>
